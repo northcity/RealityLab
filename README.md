@@ -77,6 +77,18 @@ reality-detector examples/demo.csv --column value
 
 # JSON output
 python -m reality_detector examples/demo.csv --column value --json
+
+# Explicit subcommand style (same behavior)
+reality-detector analyze examples/demo.csv --column value
+
+# Collect local clock jitter data
+reality-detector collect --source clock --samples 300 --output data/clock.csv
+
+# Collect ping latency data
+reality-detector collect --source ping --samples 25 --host 1.1.1.1 --output data/ping.csv
+
+# Run full prototype (collect + analyze + compare)
+reality-detector prototype --output-dir data/prototype_runs
 ```
 
 Example output:
@@ -117,6 +129,14 @@ If `--column` is not provided, the CLI picks the first numeric-looking column.
 | 1 | Mild anomaly, likely normal variation / 轻微异常，很可能是正常波动 |
 | 2 | Notable anomaly, collect more data / 值得注意，建议增加样本 |
 | 3-4 | Strong anomaly signal, but still not proof of simulation / 异常较强，但仍不能证明是模拟 |
+
+## What this can and cannot do | 能做与不能做
+
+- ✅ Can: detect unusual regularity in observed numeric sequences
+- ✅ Can: compare real-world traces vs toy simulated traces
+- ✅ Can: provide evidence for "this dataset looks structured"
+- ❌ Cannot: prove the universe is simulated or real
+- ❌ Cannot: replace neuroscience or physics-level causal proof
 
 ## Project structure
 
