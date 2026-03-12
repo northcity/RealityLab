@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reality-anomaly-detector"
+version = "0.1.0"
+description = "A tiny Python library and CLI for spotting unusual statistical patterns in time-series data."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [
+  { name = "northcity" }
+]
+keywords = ["statistics", "timeseries", "anomaly-detection", "simulation", "cli"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Information Analysis"
+]
+
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/northcity/RealityLab"
+Repository = "https://github.com/northcity/RealityLab"
+Issues = "https://github.com/northcity/RealityLab/issues"
+
+[project.scripts]
+reality-detector = "reality_detector.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
