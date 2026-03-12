@@ -1,0 +1,32 @@
+{
+  "timestamp": "20260312_194632",
+  "clock_data_file": "data/prototype_runs/clock_jitter_20260312_194632.csv",
+  "ping_data_file": "data/prototype_runs/ping_latency_20260312_194632.csv",
+  "clock_report": {
+    "sample_count": 300,
+    "entropy": 8.133,
+    "autocorrelation_lag1": 0.0924,
+    "discretization_score": 0.0067,
+    "run_length_deviation": 14.0,
+    "anomaly_score": 1,
+    "interpretation": "Mild anomaly detected; likely normal variation."
+  },
+  "ping_report": {
+    "sample_count": 25,
+    "entropy": 4.5639,
+    "autocorrelation_lag1": 0.0349,
+    "discretization_score": 0.0417,
+    "run_length_deviation": 1.52,
+    "anomaly_score": 0,
+    "interpretation": "No obvious anomaly detected."
+  },
+  "reference_report": {
+    "sample_count": 12,
+    "entropy": 1.0,
+    "autocorrelation_lag1": -0.9167,
+    "discretization_score": 1.0,
+    "run_length_deviation": 5.0,
+    "anomaly_score": 2,
+    "interpretation": "Notable anomaly detected; collect more data."
+  }
+}
